@@ -26,6 +26,6 @@ jobs:
           project-path: devbox.json
       - name: All
         run: |
-          devbox run -- ./app pack
+          devbox run pack
         env:
           GITHUB_TOKEN: ${{ env.GITHUB_TOKEN }}
