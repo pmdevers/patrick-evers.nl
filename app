@@ -27,8 +27,8 @@ def "main pack" [
             (git rev-parse --short HEAD | str trim) 
         )
 
-    #main docker login $token $registery $username
-    #main docker build $baseimage
+    main docker login $token $registery $username
+    main docker build $baseimage
     main tag $tag
 }
 

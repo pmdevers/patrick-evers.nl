@@ -1,10 +1,9 @@
 def --env "main docker login" [
-    token,
     registery = "ghcr.io",
     username = "pmdevers"
 ] {
 
-    echo $token | docker login $registery -u $username --password-stdin
+    echo $GITHUB_TOKEN | docker login $registery -u $username --password-stdin
 }
 
 def "main docker tag-existing" [
