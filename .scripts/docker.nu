@@ -3,7 +3,7 @@ def --env "main docker login" [
     username = "pmdevers"
 ] {
 
-    echo $GITHUB_TOKEN | docker login $registery -u $username --password-stdin
+    echo $"($env.GITHUB_TOKEN)" | docker login $registery -u $"($username)" --password-stdin
 }
 
 def "main docker tag-existing" [

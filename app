@@ -18,7 +18,7 @@ def "main pack" [
     --tag: string = "",
 ] {
 
-    let token = (main get github)
+    #let token = (main get github)
     let $baseimage = (
         main create-image 
             $registery 
@@ -27,7 +27,7 @@ def "main pack" [
             (git rev-parse --short HEAD | str trim) 
         )
 
-    main docker login $token $registery $username
+    main docker login $registery $username
     main docker build $baseimage
     main tag $tag
 }
