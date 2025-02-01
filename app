@@ -55,6 +55,6 @@ def "main tag" [
             $tag
     )
 
-    main docker login $token $registery $username
+    main docker login $registery $username
     main docker tag-existing $baseimage $image
 }
