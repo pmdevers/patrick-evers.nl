@@ -1,0 +1,22 @@
+{
+  "$schema": "https://raw.githubusercontent.com/jetify-com/devbox/0.13.7/.schema/devbox.schema.json",
+  "packages": [
+    "nushell@latest",
+    "gh@latest",
+    "bun@1.2.0",
+    "git@2.47",
+    "tailwindcss@3.4.17"
+  ],
+  "shell": {
+    "init_hook": [
+      "export PATH=$PATH:$PWD",
+      "chmod +x app",
+      "clear"
+    ],
+    "scripts": {
+      "test": [
+        "echo \"Error: no test specified\" && exit 1"
+      ]
+    }
+  }
+}
