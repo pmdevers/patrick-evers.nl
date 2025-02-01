@@ -1,0 +1,31 @@
+name: tag
+run-name: tag
+on:
+    push:
+      tags:
+        - 'v*'
+jobs:
+  all:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+      attestations: write
+      id-token: write
+    env:
+      GITHUB_TOKEN: ${{ github.token }}
+      FORCE_COLOR: 1
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v3
+      - name: Install devbox
+        uses: jetify-com/devbox-install-action@v0.11.0
+        with:
+          project-path: devbox.json
+      - name: All
+        run: |
+          devbox run -- ./app tag ${{ github.ref_name }}
+        env:
+          GITHUB_TOKEN: ${{ env.GITHUB_TOKEN }}
