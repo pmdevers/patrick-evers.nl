@@ -15,9 +15,9 @@ spec:
     spec:
       restartPolicy: Always
       volumes:
-        - name: nginx-pv-storage
+        - name: patrick-evers-storage
           persistentVolumeClaim:
-            claimName: nfs-pvc
+            claimName: patrick-evers
       containers:
         - name: patrick-evers
           image: nginx
@@ -30,6 +30,6 @@ spec:
               cpu: 200m
           volumeMounts:
             - mountPath: "/usr/share/nginx/html"
-              name: nginx-pv-storage
+              name: patrick-evers-storage
           ports:
             - containerPort: 8080
