@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: patrick-evers
+spec:
+  selector:
+    app: patrick-evers
+  ports:
+    - port: 8080
+      targetPort: 8080
+      protocol: TCP
+      name: http

@@ -1,0 +1,13 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: patrick-evers
+  namespace: patrick-evers
+spec:
+  secretName: patrick-evers-secret
+  issuerRef:
+    name: letsencrypt
+    kind: ClusterIssuer
+  dnsNames:
+    - "www.patrick-evers.nl"
+    - "patrick-evers.nl"

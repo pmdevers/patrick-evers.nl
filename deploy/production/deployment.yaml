@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: patrick-evers-deployment
+  labels:
+    app: patrick-evers
+spec:
+  selector:
+    matchLabels:
+      app: patrick-evers
+  template:
+    metadata:
+      labels:
+        app: patrick-evers
+    spec:
+      restartPolicy: Always
+      volumes:
+        - name: nginx-pv-storage
+          persistentVolumeClaim:
+            claimName: nfs-pvc
+      containers:
+        - name: patrick-evers
+          image: nginx
+          resources:
+            requests:
+              memory: 100Mi
+              cpu: 50m
+            limits:
+              memory: 256Mi
+              cpu: 200m
+          volumeMounts:
+            - mountPath: "/usr/share/nginx/html"
+              name: nginx-pv-storage
+          ports:
+            - containerPort: 8080
