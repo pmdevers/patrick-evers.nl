@@ -15,21 +15,29 @@ def "main pack" [
     --registery: string = "ghcr.io"
     --username: string = "pmdevers"
     --image: string = "website"
-    --tag: string = "",
+    --tag: string = ""
+    --local
 ] {
 
-    #let token = (main get github)
-    let $baseimage = (
-        main create-image 
-            $registery 
-            $username
-            $image
-            (git rev-parse --short HEAD | str trim) 
-        )
+    if ( $local ) {
 
-    main docker login $registery $username
-    main docker build $baseimage
-    main tag $tag
+        let tag = (git rev-parse --short HEAD | str trim)
+        docker-build $"($image):($tag)"
+    } else {
+
+        let token = (get-github-token)
+        let $baseimage = (
+            create-image 
+                $registery 
+                $username
+                $image
+                (git rev-parse --short HEAD | str trim) 
+            )
+
+        docker-login $token $registery $username
+        docker-build $baseimage
+        docker-push $baseimage
+    }
 }
 
 def "main tag" [
@@ -37,24 +45,35 @@ def "main tag" [
     --username: string = "pmdevers"
     --image: string = "website"
     tag: string,
+    --local
 ] {
-    let token = (main get github)
-    let $baseimage = (
-        main create-image 
-            $registery 
-            $username
-            $image
-            (git rev-parse --short HEAD | str trim) 
+    if ( $local ) {
+        let rev = (git rev-parse --short HEAD | str trim)
+        let $baseimage = $"($image):($rev)";
+        let $newtag = $"($image):($tag)";
+
+        docker-tag-existing $baseimage $newtag
+
+    } else {
+
+        let token = (get-github-token)
+        let $baseimage = (
+            create-image 
+                $registery 
+                $username
+                $image
+                (git rev-parse --short HEAD | str trim) 
+            )
+
+        let $image = (
+            create-image 
+                $registery 
+                $username
+                $image
+                $tag
         )
 
-    let $image = (
-        main create-image 
-            $registery 
-            $username
-            $image
-            $tag
-    )
-
-    main docker login $registery $username
-    main docker tag-existing $baseimage $image
+        docker-login $registery $username
+        docker-tag-existing $baseimage $image
+    }
 }

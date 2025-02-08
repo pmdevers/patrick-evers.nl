@@ -1,12 +1,13 @@
-def --env "main docker login" [
+def --env "docker-login" [
+    token: string,
     registery = "ghcr.io",
     username = "pmdevers"
 ] {
 
-    echo $"($env.GITHUB_TOKEN)" | docker login $registery -u $"($username)" --password-stdin
+    echo $"($token)" | docker login $registery -u $"($username)" --password-stdin
 }
 
-def "main docker tag-existing" [
+def "docker-tag" [
     existing: string,
     new: string
 ] {
@@ -15,7 +16,13 @@ def "main docker tag-existing" [
     docker push $new
 }
 
-def --env "main docker build" [
+def "docker-push" [
+    image: string
+] {
+    docker push $image 
+}
+
+def --env "docker-build" [
     tag
 ] {
     docker buildx create --use
@@ -24,12 +31,12 @@ def --env "main docker build" [
         docker buildx build 
             --platform linux/amd64,linux/arm64 
             --tag $tag
-            --push
             .
+        docker push $tag
     )
 }
 
-def "main create-image" [
+def "create-image" [
     registery: string,
     username: string,
     image: string,
