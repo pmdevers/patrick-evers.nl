@@ -14,13 +14,9 @@ spec:
         app: patrick-evers
     spec:
       restartPolicy: Always
-      volumes:
-        - name: patrick-evers-storage
-          persistentVolumeClaim:
-            claimName: patrick-evers
       containers:
         - name: patrick-evers
-          image: nginx
+          image: ghcr.io/pmdevers/patrick-evers:sha-306a92a
           resources:
             requests:
               memory: 100Mi
@@ -28,8 +24,5 @@ spec:
             limits:
               memory: 256Mi
               cpu: 200m
-          volumeMounts:
-            - mountPath: "/usr/share/nginx/html"
-              name: patrick-evers-storage
           ports:
-            - containerPort: 8080
+            - containerPort: 80
