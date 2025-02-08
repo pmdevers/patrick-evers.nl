@@ -3,30 +3,6 @@ import { ref, computed } from "vue";
 import { MotionComponent } from "@vueuse/motion";
 
 
-class FibonacciSphere {
-    #points;
-
-    get points() {
-        return this.#points;
-    }
-
-    constructor(N) {
-        this.#points = [];
-
-        const goldenAngle = Math.PI * (3 - Math.sqrt(5));
-
-        for (let i = 0; i < N; i++) {
-            const y = 1 - (i / (N - 1)) * 2;
-            const radius = Math.sqrt(1 - y ** 2);
-            const a = goldenAngle * i;
-            const x = Math.cos(a) * radius;
-            const z = Math.sin(a) * radius;
-
-            this.#points.push([x, y, z]);
-        }
-    }
-}
-
 // Sample tags
 const tags = ref([
   "Vue3", "Tailwind CSS", "Vite", "TypeScript", "Bun",
