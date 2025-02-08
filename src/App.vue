@@ -1,81 +1,78 @@
 <script setup>
 import { ref } from "vue";
+import Tagcloud from "./components/tagcloud.vue";
 
-const testimonials = ref([
+const projects = ref([
   {
-    name: "John Doe",
-    feedback: "NeoBank makes banking effortless! The app is smooth and secure.",
-    image: "https://randomuser.me/api/portraits/men/32.jpg",
+    title: "Portfolio Website",
+    description: "A modern portfolio built with Vue 3 and Tailwind CSS.",
+    link: "#",
+    img: "https://picsum.photos/400/250?=12"
   },
   {
-    name: "Sarah Smith",
-    feedback: "Their customer support is top-notch! Highly recommended.",
-    image: "https://randomuser.me/api/portraits/women/44.jpg",
+    title: "Task Manager App",
+    description: "A simple yet powerful task manager for personal productivity.",
+    link: "#",
+    img: "https://picsum.photos/400/250?=13"
   },
   {
-    name: "James Wilson",
-    feedback: "I love the zero-fee international transactions!",
-    image: "https://randomuser.me/api/portraits/men/51.jpg",
-  },
+    title: "E-commerce Platform",
+    description: "A fully-featured e-commerce site built with Vue.js.",
+    link: "#",
+    img: "https://picsum.photos/400/250?=14"
+  }
 ]);
 </script>
 
 <template>
-
-  <div class="bg-blue-50 text-blue-900">
+  <div class="bg-deepblue-50 text-gray-900">
+    
     <!-- Hero Section -->
-    <section class="relative bg-blue-600 text-white py-20 text-center">
+    <section class="bg-deepblue-500 text-white py-20 text-center">
       <div class="container mx-auto px-6">
-        <h1 class="text-5xl font-bold">Welcome to NeoBank</h1>
-        <p class="mt-4 text-lg">Banking redefined for the digital age.</p>
-        <button class="mt-6 px-6 py-3 bg-white text-navy-600 font-semibold rounded-lg shadow-lg hover:bg-navy-200 transition">
-          Get Started
-        </button>
-      </div>
-    </section>
-
-    <!-- Features -->
-    <section class="py-16">
-      <div class="container mx-auto px-6">
-        <h2 class="text-3xl font-bold text-center">Why Choose NeoBank?</h2>
-        <div class="grid md:grid-cols-3 gap-8 mt-10">
-          <div class="bg-white p-6 rounded-lg shadow">
-            <h3 class="text-xl font-semibold">Zero Fees</h3>
-            <p class="mt-2 text-gray-600">No hidden charges, no surprises.</p>
-          </div>
-          <div class="bg-white p-6 rounded-lg shadow">
-            <h3 class="text-xl font-semibold">24/7 Support</h3>
-            <p class="mt-2 text-gray-600">We’re here for you anytime, anywhere.</p>
-          </div>
-          <div class="bg-white p-6 rounded-lg shadow">
-            <h3 class="text-xl font-semibold">Secure Transactions</h3>
-            <p class="mt-2 text-gray-600">Advanced security to protect your money.</p>
-          </div>
+        <h1 class="text-5xl font-bold">Hi, I'm Patrick Evers</h1>
+        <p class="mt-4 text-lg">A software developer / cloud architect</p>
+        <div class="mt-6 flex justify-center space-x-4">
+          <a href="https://www.linkedin.com/in/pmdevers" class="px-4 py-2 bg-softblush-300 rounded-lg shadow-lg">LinkedIn</a>
+          <a href="https://www.github.com/pmdevers" class="px-4 py-2 bg-skyblue-500 rounded-lg shadow-lg">GitHub</a>
         </div>
       </div>
     </section>
 
-    <!-- Testimonials -->
+    <!-- About Section -->
+    <section class="py-16 text-center">
+      <div class="container mx-auto px-6 w-250">
+        <h2 class="text-3xl font-bold text-deepblue-500">About Me</h2>
+        <p class="mt-4 text-lg text-gray-600">
+          These are the technologies I currently use on a daily basis.
+        </p>
+        <Tagcloud />
+      </div>
+    </section>
+
+    <!-- Projects Section -->
     <section class="bg-gray-100 py-16">
       <div class="container mx-auto px-6">
-        <h2 class="text-3xl font-bold text-center">What Our Customers Say</h2>
+        <h2 class="text-3xl font-bold text-center text-deepblue-500">Projects</h2>
         <div class="grid md:grid-cols-3 gap-8 mt-10">
-          <div v-for="(testi, index) in testimonials" :key="index" class="bg-white p-6 rounded-lg shadow text-center">
-            <img :src="testi.image" alt="User" class="w-16 h-16 rounded-full mx-auto">
-            <h3 class="text-lg font-semibold mt-4">{{ testi.name }}</h3>
-            <p class="mt-2 text-gray-600">"{{ testi.feedback }}"</p>
+          <div v-for="(project, index) in projects" :key="index" class="flex flex-col bg-white p-6 rounded-lg shadow">
+            <img :src="project.img" :alt="project.title" class="rounded-lg">
+            <h3 class="text-xl font-semibold mt-4">{{ project.title }}</h3>
+            <p class="mt-2 text-gray-600 grow">{{ project.description }}</p>
+            <a :href="project.link" class="mt-4 inline-block text-skyblue-500 font-semibold">View Project →</a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Call to Action -->
-    <section class="py-16 text-center bg-blue-500 text-white">
-      <h2 class="text-3xl font-bold">Join NeoBank Today</h2>
-      <p class="mt-4 text-lg">Experience seamless, secure, and modern banking.</p>
-      <button class="mt-6 px-6 py-3 bg-white text-blue-600 font-semibold rounded-lg shadow-lg hover:bg-gray-200 transition">
-        Open an Account
-      </button>
+    <!-- Contact Section -->
+    <section class="py-16 text-center bg-deepblue-500 text-white pb-20">
+      <h2 class="text-3xl font-bold">Let's Work Together</h2>
+      <p class="mt-4 text-lg">Feel free to reach out for collaboration or inquiries.</p>
+      <a href="mailto:alex@example.com" class="mt-6 px-6 py-3 bg-mauverose-400 text-white font-semibold rounded-lg shadow-lg hover:bg-gray-200 transition">
+        Contact Me
+      </a>
     </section>
+
   </div>
 </template>
