@@ -41,13 +41,27 @@ const projects = ref([
 
     <!-- About Section -->
     <section class="py-16 text-center">
-      <div class="container mx-auto px-6 w-250">
+      <div class="container mx-auto px-6 max-w-250">
         <h2 class="text-3xl font-bold text-deepblue-500">About Me</h2>
         <p class="mt-4 text-lg text-midnight-600">
-          These are the technologies I currently use on a daily basis.
+          I am a Software Architect with a deep passion for designing scalable, resilient, and future-proof systems. At Tjip, I specialize in Software Architecture, focusing on building robust solutions that drive digital transformation. My expertise includes Event-Driven Architectures, Event Streaming, and designing distributed systems that handle high-throughput, real-time data processing.        </p>
+        <p class="mt-4 text-lg text-midnight-600">
+          With hands-on experience in event streaming platforms like Apache Kafka and cloud-native architectures, I enjoy solving complex challenges related to system scalability, integration, and performance optimization. I believe in leveraging asynchronous communication patterns and domain-driven design to create systems that are both efficient and maintainable.        </p>
+        <p class="mt-4 text-lg text-midnight-600">
+          Beyond my technical work, I have a strong passion for travel and cultural exploration, which inspires my problem-solving approach—combining curiosity, adaptability, and strategic thinking. Whether planning a multi-city camper trip through Italy and the U.S. or architecting event-driven solutions, I thrive on finding the best path forward in complex landscapes.          
         </p>
+        <p class="mt-4 text-lg text-midnight-600">
+          I am always eager to collaborate on innovative projects that push the boundaries of modern software architecture and real-time data processing.
+        </p>
+      </div>
+    </section>
+
+    <section class="bg-softblush-50 py-16 text-center">
+      <div class="container mx-auto px-6 max-w-250">
+        <h2 class="text-3xl font-bold text-deepblue-500">These are the technologies I currently use on a daily basis.</h2>
         <Tagcloud />
       </div>
+
     </section>
 
     <!-- Projects Section -->

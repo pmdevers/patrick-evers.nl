@@ -30,7 +30,7 @@ class FibonacciSphere {
 // Sample tags
 const tags = ref([
   "Vue3", "Tailwind CSS", "Vite", "TypeScript", "Bun",
-  "Docker", "Kubernetes", "Azure",
+  "Docker", "Kubernetes", "Azure", "Apache Kafka",
   "C#", "MongoDB", "PostgreSQL", "GitHub", "Azure DevOps", "REST API", "GitOps",
   "FluxCD", "Prometheus", "Grafana", "Loki", "Helm", "Kustomize", "k9s", "SQL"
 ]);
@@ -38,11 +38,9 @@ const tags = ref([
 // Generate random styles for each tag
 const getTagStyle = () => {
   return {
-    fontSize: `${Math.floor(Math.random() * 12) + 14}px`, // 14px - 26px
-    transform: `rotate(${Math.floor(Math.random() * 10) - 5}deg)`, // -5 to 5 degrees
-    color: `hsl(${Math.floor(Math.random() * 250)}, 70%, 50%)`, // Random color,
-    //x: Math.floor(Math.random() * 300) - 150, // Random X (-150 to 150)
-    //y: Math.floor(Math.random() * 100) - 50,  // Random Y (-50 to 50)
+    fontSize: `${Math.floor(Math.random() * 50) + 14}px`,
+    transform: `rotate(${Math.floor(Math.random() * 10) - 5}deg)`,
+    color: `hsl(${Math.floor(Math.random() * 250)}, 70%, 50%)`
   };
 };
 
