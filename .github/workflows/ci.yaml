@@ -11,7 +11,7 @@ on:
   pull_request:
 
 env:
-  DOCKER_IMAGE_NAME: website
+  DOCKER_IMAGE_NAME: patrick-evers
 
 jobs:
   docker:
@@ -24,7 +24,7 @@ jobs:
         with:
           # list of Docker images to use as base name for tags
           images: |
-            ghcr.io/pmdevers/website
+            ghcr.io/pmdevers/patrick-evers
           # generate Docker tags based on the following events/attributes
           tags: |
             type=schedule
@@ -34,6 +34,7 @@ jobs:
             type=semver,pattern={{major}}.{{minor}}
             type=semver,pattern={{major}}
             type=sha,prefix={{branch}}-,suffix=-{{date 'X'}}
+            type=sha
 
       - name: Log in to GitHub Container Registry
         if: github.event_name != 'pull_request'
