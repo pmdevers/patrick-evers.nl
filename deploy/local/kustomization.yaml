@@ -9,3 +9,7 @@ patches:
   target:
     kind: HorizontalPodAutoscaler
     name: webserver
+- path: patches/ingress.yaml
+  target:
+    kind: Ingress
+    name: patrick-evers
