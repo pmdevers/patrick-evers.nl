@@ -5,7 +5,6 @@ namespace: patrick-evers
 
 resources:
   - namespace.yaml
-  - pvc.yaml
   - deployment.yaml
   - service.yaml
   - certificate.yaml

@@ -13,3 +13,7 @@ patches:
   target:
     kind: Ingress
     name: patrick-evers
+- target:
+    kind: Certificate
+    name: patrick-evers
+  path: patches/certificate.yaml
