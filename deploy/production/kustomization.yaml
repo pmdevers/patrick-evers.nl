@@ -7,5 +7,5 @@ resources:
   - namespace.yaml
   - deployment.yaml
   - service.yaml
-  - certificate.yaml
+#  - certificate.yaml
   - ingress.yaml
