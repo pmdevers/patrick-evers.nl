@@ -4,6 +4,8 @@ WORKDIR /app
 COPY package*.json ./
 RUN bun install
 COPY . .
+ARG GITHUB_TOKEN
+ENV GITHUB_TOKEN=$GITHUB_TOKEN
 RUN bun run build
 
 # production stage

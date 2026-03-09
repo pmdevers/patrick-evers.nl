@@ -6,15 +6,15 @@ const skillCategories = [
   },
   {
     name: "C# / .NET Ecosystem",
-    skills: [".NET 8", "ASP.NET Core", "Entity Framework", "NUnit", "MediatR"]
+    skills: [".NET 10", "ASP.NET Core", "Entity Framework", "NUnit", "TUnit", "XUnit"]
   },
   {
     name: "DevOps & Cloud",
-    skills: ["Azure DevOps", "Kubernetes", "Docker", "Terraform", "CI/CD Pipelines", "Bicep"]
+    skills: ["Azure DevOps", "Kubernetes", "Talos Linux", "Docker", "Terraform", "CI/CD Pipelines", "Bicep", "FluxCD", "Crossplane", "Prometheus", "Grafana"]
   },
   {
     name: "Data & Storage",
-    skills: ["PostgreSQL", "MongoDB", "CosmosDB", "Redis", "Elasticsearch"]
+    skills: ["PostgreSQL", "SQL Server", "Oracle", "MongoDB", "CosmosDB", "Redis", "Elasticsearch"]
   }
 ];
 </script>
