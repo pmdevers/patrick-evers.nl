@@ -5,8 +5,7 @@ COPY package*.json ./
 RUN bun install
 COPY . .
 ARG GITHUB_TOKEN
-ENV GITHUB_TOKEN=$GITHUB_TOKEN
-RUN bun run build
+RUN GITHUB_TOKEN=$GITHUB_TOKEN bun run build
 
 # production stage
 FROM nginx:stable-alpine AS production-stage

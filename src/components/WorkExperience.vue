@@ -18,7 +18,7 @@ const experiences = [
     location: "The Hague, Netherlands",
     description: "Led .NET software development teams using Agile methodologies. Responsible for architecture decisions, code quality, and delivery of scalable web platforms.",
     tags: ["C#", ".NET", "Architecture", "Agile", "SQL Server", "MongoDB", "Elastic Search"],
-    clients: ["Deen Supermarkten", "Lens Express", "City Lens", "Terpstra Muziek", "GeoStick", "Carlton Hotels"]
+    clients: ["Deen Supermarkten", "Lens Express", "City Lens", "Terpstra Muziek", "GeoStick", "Carlton Hotels", "Van Lier", "Happy Hair Service"]
   },
   {
     company: "MapTrace",
@@ -38,7 +38,7 @@ const experiences = [
     location: "Bergen op Zoom, Netherlands",
     description: "Consultant at an international JD Edwards Consultancy & Support firm and global Oracle partner, delivering managed & outsourced solutions with offices across The Netherlands, UK, Czech Republic, France, and Italy.",
     tags: ["Windows Server", "AS400", "Oracle", "JD Edwards", "REST", "C++", "SQL"],
-    clients: ["CEVA Logistics", "OMRON", "BRÜEL&KJÆR"]
+    clients: ["CEVA Logistics", "OMRON", "BRÜEL&KJÆR", "Ten Kate", "KEUNE Haircosmetics"]
   },
   {
     company: "Butler Systems",
