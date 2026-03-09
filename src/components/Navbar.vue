@@ -19,7 +19,7 @@ onUnmounted(() => {
 <template>
   <nav 
     class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-6 py-4"
-    :class="isScrolled ? 'bg-deepblue-900/80 backdrop-blur-lg border-b border-white/10 py-3' : 'bg-transparent'"
+    :class="isScrolled ? 'bg-deepblue-900/80 backdrop-blur-lg border-b border-white/10 py-3' : 'bg-[#4a4a4a]'"
   >
     <div class="container mx-auto flex justify-between items-center">
       <div class="text-xl font-bold text-white tracking-tighter">
