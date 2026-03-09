@@ -23,7 +23,7 @@ onUnmounted(() => {
   >
     <div class="container mx-auto flex justify-between items-center">
       <div class="text-xl font-bold text-white tracking-tighter">
-        <span class="text-blue-400">PE</span>.ARCHITECT
+        <span class="text-blue-400">Patrick</span> Evers
       </div>
       
       <div class="hidden md:flex items-center space-x-8 text-sm font-medium text-blue-100/80 uppercase tracking-widest">
