@@ -34,6 +34,10 @@ const projects = ref([
     
     <!-- Hero Section -->
     <section class="relative pt-32 pb-24 md:pt-48 md:pb-40 overflow-hidden bg-grid">
+      <!-- Background Image -->
+      <div class="absolute inset-0 z-0">
+        <img src="https://images.pexels.com/photos/1181320/pexels-photo-1181320.jpeg" alt="" class="w-full h-full object-cover opacity-10 grayscale brightness-50 contrast-125">
+      </div>
       <div class="absolute inset-0 bg-radial-at-t from-blue-900/40 via-deepblue-950 to-deepblue-950"></div>
       
       <div class="container mx-auto px-6 relative z-10">
