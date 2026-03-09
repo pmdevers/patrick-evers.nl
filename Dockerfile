@@ -4,7 +4,8 @@ WORKDIR /app
 COPY package*.json ./
 RUN bun install
 COPY . .
-RUN bun run build
+ARG GITHUB_TOKEN
+RUN GITHUB_TOKEN=$GITHUB_TOKEN bun run build
 
 # production stage
 FROM nginx:stable-alpine AS production-stage

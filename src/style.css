@@ -3,73 +3,97 @@
 @theme {
     --color-*: initial;
 
+    --color-black: #000;
     --color-white: #fff;
 
-    --color-deepblue-50:  #e6e9f2;
-    --color-deepblue-100: #cdd3e1;
-    --color-deepblue-200: #9aa2c4;
-    --color-deepblue-300: #6770a6;
-    --color-deepblue-400: #344f89;
-    --color-deepblue-500: #0d1e4c;
-    --color-deepblue-600: #0b1942;
-    --color-deepblue-700: #081435;
-    --color-deepblue-800: #060e29;
-    --color-deepblue-900: #04091d;
+    /* Dark navy backgrounds — #355872 as 500 */
+    --color-deepblue-50:  #eaf0f4;
+    --color-deepblue-100: #d5e1e9;
+    --color-deepblue-200: #abcbd9;
+    --color-deepblue-300: #7aadc3;
+    --color-deepblue-400: #527da0;
+    --color-deepblue-500: #355872;
+    --color-deepblue-600: #2b4a60;
+    --color-deepblue-700: #203a4c;
+    --color-deepblue-800: #162b38;
+    --color-deepblue-900: #0d1c26;
+    --color-deepblue-950: #08111a;
 
-    --color-mauverose-50:   #f7ebf1;
-    --color-mauverose-100: #efd7e3;
-    --color-mauverose-200: #e0afc7;
-    --color-mauverose-300: #d187ab;
-    --color-mauverose-400: #c48cb3;
-    --color-mauverose-500: #a36692;
-    --color-mauverose-600: #824f74;
-    --color-mauverose-700: #623956;
-    --color-mauverose-800: #412438;
-    --color-mauverose-900: #210e1b;
+    /* Sky blue accents — #7aaace as 400 */
+    --color-blue-50:  #eff6fb;
+    --color-blue-100: #daecf6;
+    --color-blue-200: #b6d9ee;
+    --color-blue-300: #91c5e5;
+    --color-blue-400: #7aaace;
+    --color-blue-500: #5d8fb0;
+    --color-blue-600: #487292;
+    --color-blue-700: #355773;
+    --color-blue-800: #233c54;
+    --color-blue-900: #112036;
 
-    --color-softblush-50:  #fbf4f7;
-    --color-softblush-100: #f7e9ef;
-    --color-softblush-200: #f0d3df;
-    --color-softblush-300: #e9bccf;
-    --color-softblush-400: #e5c9d7;
-    --color-softblush-500: #d3a0b6;
-    --color-softblush-600: #b27896;
-    --color-softblush-700: #915f75;
-    --color-softblush-800: #713f55;
-    --color-softblush-900: #502735;
+    /* Powder blue highlights — #9cd5ff as 300 */
+    --color-mauverose-50:  #f0f9ff;
+    --color-mauverose-100: #dff2ff;
+    --color-mauverose-200: #c0e7ff;
+    --color-mauverose-300: #9cd5ff;
+    --color-mauverose-400: #71c1ff;
+    --color-mauverose-500: #3aabff;
+    --color-mauverose-600: #1290e8;
+    --color-mauverose-700: #0b70ba;
+    --color-mauverose-800: #07518b;
+    --color-mauverose-900: #04325c;
 
-    --color-blue-50:  #eef4fa;
-    --color-blue-100: #dbe5f3;
-    --color-blue-200: #b9cbe6;
-    --color-blue-300: #97b1da;
-    --color-blue-400: #83a6ce;
-    --color-blue-500: #6a8ab6;
-    --color-blue-600: #506e96;
-    --color-blue-700: #3a5373;
-    --color-blue-800: #27394f;
-    --color-blue-900: #151f2d;
+    /* Cream — #f7f8f0 as 50 */
+    --color-softblush-50:  #f7f8f0;
+    --color-softblush-100: #eef0de;
+    --color-softblush-200: #dce3bc;
+    --color-softblush-300: #c9d49b;
+    --color-softblush-400: #b4c178;
+    --color-softblush-500: #97a857;
+    --color-softblush-600: #798843;
+    --color-softblush-700: #5b6832;
+    --color-softblush-800: #3e4721;
+    --color-softblush-900: #212611;
 
-    --color-slate-50: #e6edf5;
-    --color-slate-100: #c9d9eb;
-    --color-slate-200: #94b0d4;
-    --color-slate-300: #6088bc;
-    --color-slate-400: #3c6aa2;
-    --color-slate-500: #26425e;
-    --color-slate-600: #203953;
-    --color-slate-700: #1a2f47;
-    --color-slate-800: #14253a;
-    --color-slate-900: #0e1b2d;
+    /* Neutral text tones — blue-tinted grays */
+    --color-slate-50:  #f0f4f7;
+    --color-slate-100: #d8e3eb;
+    --color-slate-200: #c6d6e4;
+    --color-slate-300: #9cb8cb;
+    --color-slate-400: #6d95ab;
+    --color-slate-500: #496f83;
+    --color-slate-600: #375668;
+    --color-slate-700: #284050;
+    --color-slate-800: #1a2b38;
+    --color-slate-900: #0d1720;
 
-    --color-midnight-50:  #e5eaf0;
-    --color-midnight-100: #cbd4e1;
-    --color-midnight-200: #97a9c3;
-    --color-midnight-300: #647da4;
-    --color-midnight-400: #3b5e87;
-    --color-midnight-500: #0b1b32;
-    --color-midnight-600: #09172b;
-    --color-midnight-700: #071324;
-    --color-midnight-800: #050f1d;
-    --color-midnight-900: #030a16;
+    /* Deepest darks */
+    --color-midnight-50:  #e4eaee;
+    --color-midnight-100: #c8d5dc;
+    --color-midnight-200: #91abb8;
+    --color-midnight-300: #5e8196;
+    --color-midnight-400: #345c73;
+    --color-midnight-500: #163546;
+    --color-midnight-600: #112c3b;
+    --color-midnight-700: #0d222f;
+    --color-midnight-800: #091922;
+    --color-midnight-900: #050f15;
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-white/10 backdrop-blur-md border border-white/20;
+  }
+  .glass-dark {
+    @apply bg-black/20 backdrop-blur-md border border-white/10;
+  }
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-linear-to-r from-blue-400 to-mauverose-300;
+  }
+  .bg-grid {
+    background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.05) 1px, transparent 0);
+    background-size: 24px 24px;
+  }
 }
 
 

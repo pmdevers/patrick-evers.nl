@@ -33,7 +33,7 @@ jobs:
             type=semver,pattern={{version}}
             type=semver,pattern={{major}}.{{minor}}
             type=semver,pattern={{major}}
-            type=sha,prefix={{branch}}-,suffix=-{{date 'X'}}
+            type=sha,prefix={{branch}}-,suffix=-{{date 'X'}},enable=${{ github.ref_type == 'branch' }}
             type=sha
 
       - name: Log in to GitHub Container Registry
@@ -57,3 +57,5 @@ jobs:
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
           platforms: linux/amd64,linux/arm64
+          build-args: |
+            GITHUB_TOKEN=${{ secrets.GH_TOKEN }}
