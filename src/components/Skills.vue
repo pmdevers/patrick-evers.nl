@@ -24,7 +24,7 @@ const skillCategories = [
     <div 
       v-for="category in skillCategories" 
       :key="category.name"
-      class="bg-deepblue-900/40 p-6 rounded-xl border border-white/5 hover:border-blue-500/30 transition-all group"
+      class="avoid-break bg-deepblue-900/40 p-6 rounded-xl border border-white/5 hover:border-blue-500/30 transition-all group"
     >
       <h3 class="text-blue-300 font-bold mb-4 uppercase tracking-wider text-sm">{{ category.name }}</h3>
       <div class="flex flex-wrap gap-2">

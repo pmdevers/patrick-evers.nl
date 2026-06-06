@@ -8,20 +8,22 @@ const { repos, loading, error } = useGithubPinnedRepos();
 </script>
 
 <template>
-  <div class="bg-deepblue-950 text-slate-200 min-h-screen font-sans selection:bg-blue-500/30">
-    <Navbar />
+  <div class="cv-document bg-deepblue-950 text-slate-200 min-h-screen font-sans selection:bg-blue-500/30">
+    <div class="no-print">
+      <Navbar />
+    </div>
     
     <!-- Hero Section -->
-    <section class="relative pt-32 pb-24 md:pt-48 md:pb-40 overflow-hidden bg-grid">
+    <section class="cv-hero relative pt-32 pb-24 md:pt-48 md:pb-40 overflow-hidden bg-grid">
       <!-- Background Image -->
-      <div class="absolute inset-0 z-0">
+      <div class="absolute inset-0 z-0 no-print">
         <img src="https://images.pexels.com/photos/1181320/pexels-photo-1181320.jpeg" alt="" class="w-full h-full object-cover opacity-30 grayscale brightness-50 contrast-125">
       </div>
-      <div class="absolute inset-0 bg-radial-at-t from-blue-900/40 via-deepblue-950 to-deepblue-950"></div>
+      <div class="absolute inset-0 bg-radial-at-t from-blue-900/40 via-deepblue-950 to-deepblue-950 no-print"></div>
       
       <div class="container mx-auto px-6 relative z-10">
         <div class="max-w-4xl">
-          <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-bold uppercase tracking-widest mb-6">
+          <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-bold uppercase tracking-widest mb-6 no-print">
             <span class="relative flex h-2 w-2">
               <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
               <span class="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
@@ -36,8 +38,8 @@ const { repos, loading, error } = useGithubPinnedRepos();
             Software Architect & DevOps Engineer specialized in <span class="text-white">Cloud Native</span> & <span class="text-white">Event-Driven Architectures</span>.
           </p>
           
-          <div class="mt-12 flex flex-wrap gap-6">
-            <a href="#contact" class="px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-lg shadow-xl shadow-blue-900/20 transition-all transform hover:-translate-y-1">
+          <div class="mt-12 flex flex-wrap gap-6 cv-contact-links">
+            <a href="#contact" class="px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-lg shadow-xl shadow-blue-900/20 transition-all transform hover:-translate-y-1 no-print">
               Let's Architect Together
             </a>
             <div class="flex items-center space-x-6">
@@ -53,14 +55,14 @@ const { repos, loading, error } = useGithubPinnedRepos();
       </div>
       
       <!-- Decorative Element -->
-      <div class="absolute -right-20 top-40 opacity-20 hidden lg:block">
+      <div class="absolute -right-20 top-40 opacity-20 hidden lg:block no-print">
         <div class="w-96 h-96 border-2 border-blue-500/30 rounded-full animate-pulse"></div>
         <div class="w-64 h-64 border border-blue-400/20 rounded-full absolute top-16 right-16"></div>
       </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-24 bg-deepblue-900/30 border-y border-white/5">
+    <section id="about" class="cv-section py-24 bg-deepblue-900/30 border-y border-white/5">
       <div class="container mx-auto px-6">
         <div class="grid lg:grid-cols-2 gap-16 items-center">
           <div>
@@ -95,7 +97,7 @@ const { repos, loading, error } = useGithubPinnedRepos();
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="py-24">
+    <section id="skills" class="cv-section py-24">
       <div class="container mx-auto px-6">
         <div class="text-center mb-16">
           <h2 class="text-4xl font-bold text-white mb-4">The Tech Stack</h2>
@@ -106,7 +108,7 @@ const { repos, loading, error } = useGithubPinnedRepos();
     </section>
 
     <!-- Work Experience Section -->
-    <section id="experience" class="py-24 bg-deepblue-900/30 border-y border-white/5">
+    <section id="experience" class="cv-section py-24 bg-deepblue-900/30 border-y border-white/5">
       <div class="container mx-auto px-6">
         <div class="text-center mb-16">
           <h2 class="text-4xl font-bold text-white mb-4">Work Experience</h2>
@@ -117,7 +119,7 @@ const { repos, loading, error } = useGithubPinnedRepos();
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="py-24 bg-deepblue-900/30 border-y border-white/5">
+    <section id="projects" class="cv-section cv-projects py-24 bg-deepblue-900/30 border-y border-white/5">
       <div class="container mx-auto px-6">
         <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div>
@@ -152,8 +154,8 @@ const { repos, loading, error } = useGithubPinnedRepos();
 
         <!-- Pinned repos grid -->
         <div v-else class="grid md:grid-cols-3 gap-8">
-          <div v-for="repo in repos" :key="repo.name" class="group flex flex-col bg-deepblue-900 border border-white/5 rounded-2xl overflow-hidden hover:border-blue-400/40 transition-all duration-500 shadow-2xl">
-            <div class="relative overflow-hidden h-48">
+          <div v-for="repo in repos" :key="repo.name" class="group cv-card avoid-break flex flex-col bg-deepblue-900 border border-white/5 rounded-2xl overflow-hidden hover:border-blue-400/40 transition-all duration-500 shadow-2xl">
+            <div class="relative overflow-hidden h-48 no-print">
               <img :src="repo.openGraphImageUrl" :alt="repo.name" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 transform group-hover:scale-110">
               <div class="absolute inset-0 bg-blue-900/20 group-hover:bg-transparent transition-colors"></div>
             </div>
@@ -189,21 +191,21 @@ const { repos, loading, error } = useGithubPinnedRepos();
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-32 relative overflow-hidden">
-      <div class="absolute inset-0 bg-blue-600/5"></div>
+    <section id="contact" class="cv-section py-32 relative overflow-hidden">
+      <div class="absolute inset-0 bg-blue-600/5 no-print"></div>
       <div class="container mx-auto px-6 relative z-10 text-center">
         <h2 class="text-5xl md:text-7xl font-black text-white mb-8">Let's <span class="text-gradient">Work</span> Together</h2>
         <p class="text-xl text-slate-400 mb-12 max-w-2xl mx-auto">
           Looking for a Software Architect to help design your next <span class="text-white font-semibold">Cloud Native</span> platform? Or a DevOps engineer to automate your growth? Let's talk.
         </p>
-        <a href="mailto:pmdevers@gmail.com" class="inline-flex items-center justify-center px-10 py-5 bg-white text-deepblue-950 font-black rounded-xl hover:bg-blue-50 transition-all transform hover:-translate-y-1 shadow-2xl shadow-white/10 text-xl">
+        <a href="mailto:pmdevers@gmail.com" class="inline-flex items-center justify-center px-10 py-5 bg-white text-deepblue-950 font-black rounded-xl hover:bg-blue-50 transition-all transform hover:-translate-y-1 shadow-2xl shadow-white/10 text-xl print-contact-link">
           INITIATE CONTACT
         </a>
       </div>
     </section>
 
     <!-- Footer -->
-    <footer class="py-12 border-t border-white/5 bg-deepblue-950">
+    <footer class="no-print py-12 border-t border-white/5 bg-deepblue-950">
       <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
         <div class="text-slate-500 text-sm">
           &copy; {{ new Date().getFullYear() }} Patrick Evers. All systems operational.
@@ -227,5 +229,229 @@ const { repos, loading, error } = useGithubPinnedRepos();
 
 html {
   scroll-behavior: smooth;
+}
+
+@page {
+  size: A4;
+  margin: 14mm;
+}
+
+@media print {
+  html,
+  body {
+    background: #ffffff !important;
+    color: #0f172a !important;
+    font-size: 11pt;
+    line-height: 1.45;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .cv-document {
+    background: #ffffff !important;
+    color: #0f172a !important;
+    min-height: auto;
+  }
+
+  /* Normalize utility text colors for print so no white/light text remains. */
+  .text-white,
+  .text-blue-300,
+  .text-blue-400,
+  .text-slate-200,
+  .text-slate-300,
+  .text-slate-400,
+  .text-slate-500,
+  .text-slate-600 {
+    color: #1e293b !important;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  #contact {
+    display: none !important;
+  }
+
+  .cv-hero {
+    padding: 0 0 8mm 0 !important;
+    margin: 0 0 8mm 0 !important;
+    background: #ffffff !important;
+    border-bottom: 1px solid #dbe4f0;
+    page-break-after: avoid;
+  }
+
+  .cv-hero h1 {
+    font-size: 30pt !important;
+    line-height: 1.05 !important;
+    margin: 0 0 3mm 0 !important;
+    color: #0f172a !important;
+  }
+
+  .cv-hero p {
+    color: #334155 !important;
+    font-size: 12pt !important;
+    margin-top: 0 !important;
+  }
+
+  .cv-contact-links {
+    margin-top: 5mm !important;
+    gap: 4mm !important;
+  }
+
+  .cv-contact-links a {
+    color: #1d4ed8 !important;
+    text-decoration: none !important;
+    font-weight: 700 !important;
+  }
+
+  .cv-contact-links a::after {
+    content: " (" attr(href) ")";
+    font-weight: 500;
+    color: #64748b;
+  }
+
+  .cv-section {
+    padding: 8mm 0 !important;
+    background: #ffffff !important;
+    border: 0 !important;
+    border-bottom: 1px solid #e2e8f0 !important;
+    page-break-inside: avoid;
+  }
+
+  .cv-section h2,
+  .cv-section h3,
+  .text-gradient {
+    color: #0f172a !important;
+    background: transparent !important;
+    -webkit-text-fill-color: #0f172a !important;
+  }
+
+  #about .grid,
+  #skills .grid,
+  #experience .space-y-12,
+  #projects .grid {
+    gap: 4mm !important;
+  }
+
+  .cv-card,
+  .avoid-break,
+  #skills > div > div > div,
+  #experience .group,
+  #projects .group {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  #skills .group,
+  #projects .group {
+    background: #f8fafc !important;
+    border: 1px solid #e2e8f0 !important;
+    box-shadow: none !important;
+  }
+
+  #experience .group > div:last-child > div {
+    background: transparent !important;
+    border: 0 !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+  }
+
+  #experience .group > div:first-child {
+    background: transparent !important;
+    border: 0 !important;
+  }
+
+  #experience p,
+  #experience a,
+  #experience .text-slate-400,
+  #experience .text-slate-500,
+  #experience .text-slate-600,
+  #projects p,
+  #projects a,
+  #projects .text-slate-400,
+  #projects .text-slate-500,
+  #about p,
+  #about .text-slate-400,
+  #skills p,
+  #skills .text-slate-400,
+  #contact p,
+  #contact .text-slate-400 {
+    color: #334155 !important;
+  }
+
+  #skills span,
+  #experience span,
+  #projects span {
+    background: #eef2ff !important;
+    color: #1e293b !important;
+    border-color: #cbd5e1 !important;
+  }
+
+  #experience .text-blue-300,
+  #experience .text-blue-400,
+  #projects .text-blue-400,
+  #contact .text-blue-400 {
+    color: #1d4ed8 !important;
+  }
+
+  #experience .absolute,
+  #experience .hidden.md\:block {
+    display: none !important;
+  }
+
+  #experience .md\:grid,
+  #experience .md\:grid-cols-2,
+  #experience [class*='md:text-right'],
+  #experience [class*='md:pl-12'],
+  #experience [class*='md:pr-12'],
+  #experience [class*='md:col-start-'],
+  #experience [class*='md:row-start-'] {
+    display: block !important;
+    text-align: left !important;
+    padding: 0 !important;
+  }
+
+  #contact {
+    text-align: left !important;
+    border-bottom: 0 !important;
+    page-break-before: avoid;
+  }
+
+  #contact h2 {
+    font-size: 19pt !important;
+    margin-bottom: 2mm !important;
+  }
+
+  .print-contact-link {
+    display: inline !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    background: transparent !important;
+    color: #1d4ed8 !important;
+    box-shadow: none !important;
+    text-decoration: none !important;
+    font-size: 11pt !important;
+    font-weight: 700 !important;
+  }
+
+  .print-contact-link::after {
+    content: " (" attr(href) ")";
+    color: #64748b;
+    font-weight: 500;
+  }
+
+  a[href^='http']::after {
+    content: " (" attr(href) ")";
+    font-size: 9pt;
+    color: #64748b;
+  }
+
+  #projects .group\/link span,
+  #projects .group\/link,
+  #projects .group-hover\/link\:ml-4 {
+    margin-left: 0 !important;
+    transition: none !important;
+  }
 }
 </style>
