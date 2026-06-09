@@ -1,22 +1,9 @@
 <script setup>
-const skillCategories = [
-  {
-    name: "Architecture & Design",
-    skills: ["Event-Driven Design", "Microservices", "CQRS", "DDD", "Kafka", "RabbitMQ"]
-  },
-  {
-    name: "C# / .NET Ecosystem",
-    skills: [".NET 10", "ASP.NET Core", "Entity Framework", "NUnit", "TUnit", "XUnit"]
-  },
-  {
-    name: "DevOps & Cloud",
-    skills: ["Azure DevOps", "Kubernetes", "Talos Linux", "Docker", "Terraform", "CI/CD Pipelines", "Bicep", "FluxCD", "Crossplane", "Prometheus", "Grafana"]
-  },
-  {
-    name: "Data & Storage",
-    skills: ["PostgreSQL", "SQL Server", "Oracle", "MongoDB", "CosmosDB", "Redis", "Elasticsearch"]
-  }
-];
+import { storeToRefs } from "pinia";
+import { useSkillsStore } from "../stores/skills";
+
+const skillsStore = useSkillsStore();
+const { skillCategories } = storeToRefs(skillsStore);
 </script>
 
 <template>

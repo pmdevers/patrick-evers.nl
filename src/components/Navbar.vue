@@ -38,10 +38,10 @@ onUnmounted(() => {
         <a href="#contact" class="px-4 py-2 bg-blue-500/20 border border-blue-400/30 rounded text-blue-300 hover:bg-blue-500/30 hover:text-white transition-all">
           Contact
         </a>
-        <button @click="downloadCv" class="px-4 py-2 bg-blue-800/20 border border-blue-700/30 rounded text-blue-300 hover:bg-blue-500/30 hover:text-white transition-all">
-          Download CV
-        </button>
       </div>
+      <button @click="downloadCv" class="px-4 py-2 bg-blue-800/20 border border-blue-700/30 rounded text-blue-300 hover:bg-blue-500/30 hover:text-white transition-all">
+          Download CV
+      </button>
     </div>
   </nav>
 </template>
