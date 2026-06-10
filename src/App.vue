@@ -147,16 +147,11 @@ const { repos, loading, error } = useGithubPinnedRepos();
           </div>
         </div>
 
-        <!-- Error state -->
-        <div v-else-if="error" class="text-center py-16">
-          <p class="text-slate-400">{{ error }}</p>
-        </div>
-
         <!-- Pinned repos grid -->
-        <div v-else class="grid md:grid-cols-3 gap-8">
+        <div class="grid md:grid-cols-3 gap-8">
           <div v-for="repo in repos" :key="repo.name" class="group cv-card avoid-break flex flex-col bg-deepblue-900 border border-white/5 rounded-2xl overflow-hidden hover:border-blue-400/40 transition-all duration-500 shadow-2xl">
             <div class="relative overflow-hidden h-48 no-print">
-              <img :src="repo.openGraphImageUrl" :alt="repo.name" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 transform group-hover:scale-110">
+              <img src="./assets/project.png" :alt="repo.name" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 transform group-hover:scale-110">
               <div class="absolute inset-0 bg-blue-900/20 group-hover:bg-transparent transition-colors"></div>
             </div>
             <div class="p-8 flex flex-col grow">
