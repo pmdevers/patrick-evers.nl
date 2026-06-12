@@ -1,0 +1,218 @@
+@media print {
+  html,
+  body {
+    background: #ffffff !important;
+    color: #0f172a !important;
+    font-size: 11pt;
+    line-height: 1.45;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .cv-document {
+    background: #ffffff !important;
+    color: #0f172a !important;
+    min-height: auto;
+  }
+
+  /* Normalize utility text colors for print so no white/light text remains. */
+  .text-white,
+  .text-blue-300,
+  .text-blue-400,
+  .text-slate-200,
+  .text-slate-300,
+  .text-slate-400,
+  .text-slate-500,
+  .text-slate-600 {
+    color: #1e293b !important;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  #contact {
+    display: none !important;
+  }
+
+  .cv-hero {
+    padding: 0 0 8mm 0 !important;
+    margin: 0 0 8mm 0 !important;
+    background: #ffffff !important;
+    border-bottom: 1px solid #dbe4f0;
+    page-break-after: avoid;
+  }
+
+  .cv-hero h1 {
+    font-size: 30pt !important;
+    line-height: 1.05 !important;
+    margin: 0 0 3mm 0 !important;
+    color: #0f172a !important;
+  }
+
+  .cv-hero p {
+    color: #334155 !important;
+    font-size: 12pt !important;
+    margin-top: 0 !important;
+  }
+
+  .cv-contact-links {
+    margin-top: 5mm !important;
+    gap: 4mm !important;
+  }
+
+  .cv-contact-links a {
+    color: #1d4ed8 !important;
+    text-decoration: none !important;
+    font-weight: 700 !important;
+  }
+
+  .cv-contact-links a::after {
+    content: " (" attr(href) ")";
+    font-weight: 500;
+    color: #64748b;
+  }
+
+  .cv-section {
+    padding: 8mm 0 !important;
+    background: #ffffff !important;
+    border: 0 !important;
+    border-bottom: 1px solid #e2e8f0 !important;
+    page-break-inside: avoid;
+  }
+
+  .cv-section h2,
+  .cv-section h3,
+  .text-gradient {
+    color: #0f172a !important;
+    background: transparent !important;
+    -webkit-text-fill-color: #0f172a !important;
+  }
+
+  #about .grid,
+  #skills .grid,
+  #experience .space-y-12,
+  #projects .grid {
+    gap: 4mm !important;
+  }
+
+  .cv-card,
+  .avoid-break,
+  #skills > div > div > div,
+  #experience .group,
+  #projects .group {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  #skills .group,
+  #projects .group {
+    background: #f8fafc !important;
+    border: 1px solid #e2e8f0 !important;
+    box-shadow: none !important;
+  }
+
+  #experience .group > div:last-child > div {
+    background: transparent !important;
+    border: 0 !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+  }
+
+  #experience .group > div:first-child {
+    background: transparent !important;
+    border: 0 !important;
+  }
+
+  #experience p,
+  #experience a,
+  #experience .text-slate-400,
+  #experience .text-slate-500,
+  #experience .text-slate-600,
+  #projects p,
+  #projects a,
+  #projects .text-slate-400,
+  #projects .text-slate-500,
+  #about p,
+  #about .text-slate-400,
+  #skills p,
+  #skills .text-slate-400,
+  #contact p,
+  #contact .text-slate-400 {
+    color: #334155 !important;
+  }
+
+  #skills span,
+  #experience span,
+  #projects span {
+    background: #eef2ff !important;
+    color: #1e293b !important;
+    border-color: #cbd5e1 !important;
+  }
+
+  #experience .text-blue-300,
+  #experience .text-blue-400,
+  #projects .text-blue-400,
+  #contact .text-blue-400 {
+    color: #1d4ed8 !important;
+  }
+
+  #experience .absolute,
+  #experience .hidden.md\:block {
+    display: none !important;
+  }
+
+  #experience .md\:grid,
+  #experience .md\:grid-cols-2,
+  #experience [class*='md:text-right'],
+  #experience [class*='md:pl-12'],
+  #experience [class*='md:pr-12'],
+  #experience [class*='md:col-start-'],
+  #experience [class*='md:row-start-'] {
+    display: block !important;
+    text-align: left !important;
+    padding: 0 !important;
+  }
+
+  #contact {
+    text-align: left !important;
+    border-bottom: 0 !important;
+    page-break-before: avoid;
+  }
+
+  #contact h2 {
+    font-size: 19pt !important;
+    margin-bottom: 2mm !important;
+  }
+
+  .print-contact-link {
+    display: inline !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    background: transparent !important;
+    color: #1d4ed8 !important;
+    box-shadow: none !important;
+    text-decoration: none !important;
+    font-size: 11pt !important;
+    font-weight: 700 !important;
+  }
+
+  .print-contact-link::after {
+    content: " (" attr(href) ")";
+    color: #64748b;
+    font-weight: 500;
+  }
+
+  a[href^='http']::after {
+    content: " (" attr(href) ")";
+    font-size: 9pt;
+    color: #64748b;
+  }
+
+  #projects .group\/link span,
+  #projects .group\/link,
+  #projects .group-hover\/link\:ml-4 {
+    margin-left: 0 !important;
+    transition: none !important;
+  }
+}
