@@ -29,7 +29,7 @@ const { skillCategories } = storeToRefs(skillsStore);
       </div>
 
       <div class="print-only ats-skills-list">
-        <h2>Skils</h2>
+        <h2>Technical Skills</h2>
         <div v-for="category in skillCategories" :key="`print-${category.name}`" class="ats-skill-row">
           <h3>{{ category.name }}</h3>
           <p>{{ category.skills.join(", ") }}</p>
