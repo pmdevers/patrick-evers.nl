@@ -16,17 +16,24 @@
         </div>
 
         <h1 class="text-6xl md:text-8xl font-black text-white leading-tight tracking-tight">
-          Patrick <span class="text-gradient">Evers</span>
+          Patrick <span class="text-gradient font-black text-[1em] leading-[inherit]">Evers</span>
         </h1>
         <p class="text-2xl md:text-3xl font-medium text-slate-400 mt-6 max-w-2xl leading-relaxed">
           Software Architect & DevOps Engineer specialized in <span class="text-white">Cloud Native</span> & <span class="text-white">Event-Driven Architectures</span>.
         </p>
 
+        <div class="print-only print-hero-meta mt-4">
+          <p>The Hague, Netherlands</p>
+          <p><a href="mailto:pmdevers@gmail.com">pmdevers@gmail.com</a></p>
+          <p><a href="https://www.linkedin.com/in/pmdevers">linkedin.com/in/pmdevers</a></p>
+          <p><a href="https://www.github.com/pmdevers">github.com/pmdevers</a></p>
+        </div>
+
         <div class="mt-12 flex flex-wrap gap-6 cv-contact-links">
           <a href="#contact" class="px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-lg shadow-xl shadow-blue-900/20 transition-all transform hover:-translate-y-1 no-print">
             Let's Architect Together
           </a>
-          <div class="flex items-center space-x-6">
+          <div class="flex items-center space-x-6 hide-in-print">
             <a href="https://www.linkedin.com/in/pmdevers" class="text-slate-400 hover:text-white transition-colors">
               <span class="text-sm font-bold uppercase tracking-widest">LinkedIn</span>
             </a>

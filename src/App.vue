@@ -3,10 +3,11 @@ import Navbar from "./components/Navbar.vue";
 import HeroSection from "./components/HeroSection.vue";
 import AboutSection from "./components/AboutSection.vue";
 import SkillsSection from "./components/SkillsSection.vue";
-import ExperienceSection from "./components/ExperienceSection.vue";
+import WorkExperience from "./components/WorkExperience.vue";
 import ProjectsSection from "./components/ProjectsSection.vue";
 import ContactSection from "./components/ContactSection.vue";
 import SiteFooter from "./components/SiteFooter.vue";
+import EducationSection from "./components/EducationSection.vue";
 import "./styles/app.css";
 
 </script>
@@ -19,7 +20,8 @@ import "./styles/app.css";
     <HeroSection />
     <AboutSection />
     <SkillsSection />
-    <ExperienceSection />
+    <WorkExperience />
+    <EducationSection />
     <ProjectsSection />
     <ContactSection />
     <SiteFooter />

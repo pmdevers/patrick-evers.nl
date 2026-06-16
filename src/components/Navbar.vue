@@ -34,6 +34,7 @@ onUnmounted(() => {
         <a href="#about" class="hover:text-white transition-colors">About</a>
         <a href="#skills" class="hover:text-white transition-colors">Skills</a>
         <a href="#experience" class="hover:text-white transition-colors">Experience</a>
+        <a href="#education" class="hover:text-white transition-colors">Education</a>
         <a href="#projects" class="hover:text-white transition-colors">Projects</a>
         <a href="#contact" class="px-4 py-2 bg-blue-500/20 border border-blue-400/30 rounded text-blue-300 hover:bg-blue-500/30 hover:text-white transition-all">
           Contact

@@ -3,7 +3,7 @@
     <div class="container mx-auto px-6">
       <div class="grid lg:grid-cols-2 gap-16 items-center">
         <div>
-          <h2 class="text-4xl font-bold text-white mb-8 relative">
+          <h2 class="text-4xl font-bold text-white mb-8 relative hide-in-print">
             Design Beyond Code
             <span class="absolute -bottom-2 left-0 w-12 h-1 bg-blue-500"></span>
           </h2>
@@ -22,7 +22,7 @@
             </p>
           </div>
         </div>
-        <div class="grid grid-cols-2 gap-4">
+        <div class="grid grid-cols-2 gap-4 hide-in-print">
           <div class="p-8 bg-white/5 border border-white/10 rounded-2xl">
             <div class="text-4xl font-bold text-blue-400 mb-2">20+</div>
             <div class="text-sm uppercase tracking-widest font-bold text-slate-500">Years Exp</div>
