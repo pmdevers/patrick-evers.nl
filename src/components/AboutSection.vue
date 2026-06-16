@@ -9,10 +9,16 @@
           </h2>
           <div class="space-y-6 text-lg text-slate-400 leading-relaxed">
             <p>
-              I am a Software Architect with a deep passion for designing <span class="text-blue-300 font-medium">scalable, resilient, and future-proof systems</span>. At Tjip, I specialize in <span class="text-white">Cloud Native Software Architecture</span>, building robust Kubernetes-native solutions that drive digital transformation.
+              I am a Software Architect with a strong focus on designing <span class="text-blue-300 font-medium">scalable, resilient, and future-proof systems</span>. My work centers on <span class="text-white">Cloud Native Architecture</span>, where I build Kubernetes-native platforms that support high-throughput, real-time workloads and drive digital transformation.
             </p>
             <p>
-              My expertise includes <span class="text-white">Cloud Native architectures</span>, Event-Driven Design, and Event Streaming — designing distributed systems that handle high-throughput, real-time data processing on Kubernetes. I leverage GitOps, infrastructure-as-code, and domain-driven design to create platforms that are efficient, observable, and maintainable.
+              At TJIP, I played a key role in modernizing the engineering landscape by introducing <span class="text-white font-semibold">GitOps practices with FluxCD</span>, enabling fully declarative, auditable, and automated delivery pipelines. I shaped architectural direction across teams, improved developer experience, and strengthened the reliability and scalability of the platform.
+            </p>
+            <p>
+              My expertise spans <span class="text-white">Cloud Native architectures</span>, Event-Driven Design, and Event Streaming - designing distributed systems capable of handling complex, real-time data flows. I apply domain-driven design, infrastructure-as-code, and strong observability practices to create platforms that are maintainable, efficient, and operationally robust.
+            </p>
+            <p>
+              Beyond cloud architecture, my background includes leading .NET engineering teams, building multi-tenant platforms powered by a generic CMS and WebShop, developing SaaS solutions for fleet management and telemetry, and even hands-on work assembling custom PCs and providing on-site network/admin support. This breadth gives me a practical, end-to-end understanding of how systems behave - from hardware to distributed cloud platforms.
             </p>
           </div>
         </div>
