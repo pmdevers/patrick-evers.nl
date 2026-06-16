@@ -31,18 +31,16 @@ const { experiences } = storeToRefs(workExperienceStore);
             <!-- Left column: meta -->
             <div :class="index % 2 === 0 ? 'md:text-right md:pr-12' : 'md:col-start-2 md:pl-12 md:row-start-1'"
               class="mb-4 md:mb-0 text-xl font-bold text-white">
-              <div class="">
-                {{ exp.role }}
-              </div>
-              <a :href="exp.url" target="_blank" class="text-blue-400 font-semibold mt-1 hover:text-blue-400 transition-colors" rel="noopener noreferrer">{{ exp.company }}</a>
-              <div class="text-slate-500 text-sm mt-1 font-medium">{{ exp.location }} | {{ exp.start }} - {{ exp.end }} </div>
+              <h3 class="text-xl font-bold text-white">{{ exp.role }}</h3>
+              <a :href="exp.url" target="_blank" class="text-blue-300 font-semibold hover:text-blue-400 transition-colors" rel="noopener noreferrer">{{ exp.company }}</a>
+              <div class="text-slate-400 text-sm">{{ exp.location }} | {{ exp.start }} - {{ exp.end }} </div>
             </div>
 
             <!-- Right column: details -->
             <div :class="index % 2 === 0 ? 'md:pl-12' : 'md:pr-12 md:text-right md:col-start-1 md:row-start-1'">
               <div
                 class="bg-deepblue-900/60 border border-white/5 rounded-2xl p-6 group-hover:border-blue-400/20 transition-all">
-                <p class="text-slate-400 leading-relaxed text-sm">{{ exp.description }}</p>
+                <p class="text-slate-400 leading-relaxed text-xs">{{ exp.description }}</p>
                 <div v-if="exp.clients.length" class="mt-4 hide-in-print">
                   <div class="text-[10px] uppercase tracking-widest text-slate-600 font-bold mb-2">Clients</div>
                   <div class="flex flex-wrap gap-2" :class="index % 2 === 0 ? '' : 'md:justify-end'">
