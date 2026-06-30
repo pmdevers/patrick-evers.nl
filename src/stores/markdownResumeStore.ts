@@ -1,6 +1,6 @@
 import { computed, ref } from 'vue'
 import type { Certificate, Education, Experience, Membership, Project, Resume, Skill } from '@/data/resume'
-import atsResumeMarkdown from '../../ATS_RESUME.md?raw'
+import atsResumeMarkdown from '../../RESUME.md?raw'
 
 const markdown = ref(atsResumeMarkdown)
 const parseError = ref<string | null>(null)

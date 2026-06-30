@@ -1,6 +1,6 @@
 # Patrick Evers
 
-Principal Software Engineer | Cloud Architect | Platform Engineering Leader
+Principal Software Engineer
 
 Relocating to Dallas, TX 
 Open to U.S. opportunities
@@ -25,7 +25,7 @@ Cloud Architecture, Platform Engineering, Kubernetes, GitOps, Distributed System
 Kubernetes, Talos Linux, FluxCD, Crossplane, Terraform, Bicep, Helm, Kustomize
 
 ### Languages & Frameworks
-C#, .NET 8/9/10, JavaScript, TypeScript, Go, Rust, C++, Entity Framework, TUnit, XUnit, NUnit, MartenDB
+C#, JavaScript, TypeScript, Go, Rust, C++, NuShell, Python, .NET 8/9/10, Entity Framework, TUnit, XUnit, NUnit, MartenDB
 
 ### Messaging & Data
 Apache Kafka, RabbitMQ, PostgreSQL, SQL Server, MongoDB, Redis, Elasticsearch, Oracle
@@ -34,7 +34,7 @@ Apache Kafka, RabbitMQ, PostgreSQL, SQL Server, MongoDB, Redis, Elasticsearch, O
 Azure DevOps, GitHub Actions, GitOps, Docker, CI/CD
 
 ### Architecture & APIs
-Domain-Driven Design (DDD), CQRS, Event-Driven Architecture, REST, gRPC
+Domain-Driven Design (DDD), CQRS, Event-Driven Architecture, REST, gRPC, Roslyn Code Generation
 
 ## Core Focus
 
@@ -47,8 +47,7 @@ TJIP BV | Delft, Netherlands | Sep 2017 - Present
 - Modernized a 75-microservice platform on Azure Kubernetes, increasing infrastructure scalability by 40%.
 - Implemented GitOps with FluxCD, improving deployment governance and reducing production incidents by 25%.
 - Maintained and optimized a high-availability (HA) Strimzi Kafka cluster within Kubernetes, securing seamless event-driven data streaming for high-throughput enterprise workloads
-- Cut release lead time from months to under 3 days through standardized CI/CD and Infrastructure as Code.
-- Mentored cross-functional teams on .NET, Vue 3, and observability to improve delivery speed and code quality.
+- Accelerated time-to-production from weeks to same-day releases through automated CI/CD pipelines and Infrastructure as Code.
 
 ### Lead .NET Software Developer
 PANGAEA Internet Marketing | The Hague, Netherlands | Jul 2011 - Sep 2017
@@ -59,7 +58,6 @@ PANGAEA Internet Marketing | The Hague, Netherlands | Jul 2011 - Sep 2017
 ### Lead Developer
 MapTrace | De Lier, Netherlands | Sep 2010 - Jun 2011
 - Led architecture and delivery of a high-availability SaaS fleet and field-service platform.
-- Built REST services and standardized integrations, reducing telemetry sync latency by 15%.
 - Improved release management and coached junior engineers on automation and embedded integrations.
 
 ### Consultant
@@ -75,7 +73,12 @@ Butler Systems | Hoek, Netherlands | Sep 2001 - Jul 2002
 ## Education
 
 ### Associate Degree in Network Systems Administration Engineering
-ROC WesterSchelde | Terneuzen, Netherlands | 2001
+ROC Westerschelde | 2001 
+Terneuzen, Netherlands
+
+### Vocational Diploma in Administrative Assistant
+ROC Westerschelde | 1999 
+Terneuzen, Netherlands
 
 ## Certifications
 

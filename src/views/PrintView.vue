@@ -26,7 +26,7 @@ const resolvedResume = computed(() => resume.value ?? defaultResume)
     </div>
 
     <!-- Professional Summary -->
-    <div class="mb-6">
+    <div class="mb-4">
       <h2 class="text-lg font-bold uppercase tracking-wide mb-2 border-b-2 border-gray-300 pb-1">
         Professional Summary
       </h2>
@@ -47,7 +47,7 @@ const resolvedResume = computed(() => resume.value ?? defaultResume)
     </div>
 
     <!-- Certifications & Memberships -->
-    <div class="mb-6" v-if="resolvedResume.certificates.length || resolvedResume.memberships?.length">
+    <div class="mb-4" v-if="resolvedResume.certificates.length || resolvedResume.memberships?.length">
       <h2 class="text-lg font-bold uppercase tracking-wide mb-3 border-b-2 border-gray-300 pb-1">
         Professional Development, Certifications &amp; Memberships
       </h2>
@@ -62,12 +62,12 @@ const resolvedResume = computed(() => resume.value ?? defaultResume)
     </div>
 
     <!-- Professional Experience -->
-    <div class="mb-6">
-      <h2 class="text-lg font-bold uppercase tracking-wide mb-3 border-b-2 border-gray-300 pb-1">
+    <div class="mb-4">
+      <h2 class="text-lg font-bold uppercase tracking-wide mb-2 border-b-2 border-gray-300 pb-1">
         Professional Experience
       </h2>
-      <div class="space-y-4">
-        <div v-for="exp in resolvedResume.experience.slice(0, 3)" :key="exp.id" class="text-sm">
+      <div class="space-y-2">
+        <div v-for="(exp, index) in resolvedResume.experience" :key="exp.id" class="text-sm">
           <div class="flex justify-between items-start">
             <div>
               <p class="font-bold">{{ exp.position }}</p>
@@ -75,7 +75,7 @@ const resolvedResume = computed(() => resume.value ?? defaultResume)
             </div>
             <p class="text-gray-600">{{ exp.duration }}</p>
           </div>
-          <ul class="ml-4 mt-1 space-y-0.5 list-disc text-gray-700">
+          <ul class="ml-4 mt-1 space-y-0.5 list-disc text-gray-700" v-if="index < 2">
             <li v-for="(desc, i) in exp.description" :key="i">
               {{ desc }}
             </li>
@@ -85,7 +85,7 @@ const resolvedResume = computed(() => resume.value ?? defaultResume)
     </div>
 
     <!-- Education -->
-    <div class="mb-6">
+    <div class="mb-4">
       <h2 class="text-lg font-bold uppercase tracking-wide mb-3 border-b-2 border-gray-300 pb-1">
         Education
       </h2>
@@ -114,7 +114,6 @@ const resolvedResume = computed(() => resume.value ?? defaultResume)
             <p class="font-bold">{{ project.title }}</p>
           </div>
           <p class="text-gray-700">{{ project.description }}</p>
-          <p class="text-gray-600 text-xs">{{ project.technologies.join(' • ') }}</p>
         </div>
       </div>
     </div>

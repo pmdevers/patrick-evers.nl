@@ -23,7 +23,7 @@ const memberships = computed(() => resolvedResume.value.memberships)
                 <h3 class="text-xl font-bold text-white">{{ edu.degree }}</h3>
                 <p class="text-blue-300 font-semibold">{{ edu.school }}</p>
               </header>
-              <p class="text-slate-400 text-sm">{{ edu.field }} | {{ edu.year }}</p>
+              <p class="text-slate-400 text-sm">{{ edu.field }} graduated: {{ edu.year }}</p>
               <p v-if="edu.details" class="text-slate-500 text-sm mt-2">{{ edu.details }}</p>
             </article>
           </div>

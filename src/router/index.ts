@@ -1,7 +1,6 @@
 import { createRouter, createWebHistory, type RouteRecordRaw } from 'vue-router'
 import PortfolioView from '../views/PortfolioView.vue'
 import PrintView from '../views/PrintView.vue'
-import PrintUsView from '../views/PrintUsView.vue'
 
 const routes: RouteRecordRaw[] = [
   {
