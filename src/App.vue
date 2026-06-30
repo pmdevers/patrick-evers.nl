@@ -41,5 +41,3 @@ const downloadCV = () => {
     </main>
   </div>
 </template>
-
-<style scoped></style>
