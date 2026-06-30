@@ -1,18 +1,16 @@
 <script setup lang="ts">
 import { computed } from 'vue'
-import type { Resume, Membership } from '@/data/resume'
+import { useMarkdownResumeStore, defaultResume } from '@/stores/markdownResumeStore'
 
-interface Props {
-  personal: Resume['personal']
-  memberships?: Membership[]
-}
-
-const props = defineProps<Props>()
+const { resume } = useMarkdownResumeStore()
+const resolvedResume = computed(() => resume.value ?? defaultResume)
+const personal = computed(() => resolvedResume.value.personal)
+const memberships = computed(() => resolvedResume.value.memberships)
 
 const nameParts = computed(() => {
-  const parts = props.personal.name.trim().split(/\s+/)
+  const parts = personal.value.name.trim().split(/\s+/)
   if (parts.length < 2) {
-    return { first: props.personal.name, last: '' }
+    return { first: personal.value.name, last: '' }
   }
 
   return {

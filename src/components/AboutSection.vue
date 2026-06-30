@@ -1,16 +1,14 @@
 <script setup lang="ts">
 import { computed } from 'vue'
-import type { Resume, Experience } from '@/data/resume'
+import { useMarkdownResumeStore, defaultResume } from '@/stores/markdownResumeStore'
 
-interface Props {
-  personal: Resume['personal']
-  experiences: Experience[]
-}
-
-const props = defineProps<Props>()
+const { resume } = useMarkdownResumeStore()
+const resolvedResume = computed(() => resume.value ?? defaultResume)
+const personal = computed(() => resolvedResume.value.personal)
+const experiences = computed(() => resolvedResume.value.experience)
 
 const yearsExp = computed(() => {
-  const years = props.experiences
+  const years = experiences.value
     .map((exp) => {
       const matches = exp.duration.match(/\d{4}/g)
       return matches ? Number(matches[0]) : NaN

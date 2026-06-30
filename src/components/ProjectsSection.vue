@@ -1,13 +1,13 @@
 <script setup lang="ts">
+import { computed } from 'vue'
 import type { Project } from '@/data/resume'
+import { useMarkdownResumeStore, defaultResume } from '@/stores/markdownResumeStore'
 import projectImage from '@/assets/project.png'
 
-interface Props {
-  projects: Project[],
-  github: string
-}
-
-defineProps<Props>()
+const { resume } = useMarkdownResumeStore()
+const resolvedResume = computed(() => resume.value ?? defaultResume)
+const projects = computed(() => resolvedResume.value.projects)
+const github = computed(() => resolvedResume.value.personal.github)
 
 </script>
 
@@ -31,7 +31,7 @@ defineProps<Props>()
 
           <div class="p-8 flex flex-col grow">
             <div class="flex flex-wrap gap-2 mb-4">
-              <span class="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 border rounded text-blue-300 border-blue-400/40 bg-blue-400/10">
+              <span class="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 border rounded text-green-300 border-green-400/40 bg-green-400/10">
                 {{ project.technologies[0] ?? 'Project' }}
               </span>
               <span v-for="tech in project.technologies.slice(1, 5)" :key="tech" class="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 bg-white/5 border border-white/10 rounded text-slate-400 group-hover:text-blue-300 transition-colors">{{ tech }}</span>

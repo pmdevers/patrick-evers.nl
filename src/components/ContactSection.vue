@@ -1,11 +1,10 @@
 <script setup lang="ts">
-import type { Resume } from '@/data/resume'
+import { computed } from 'vue'
+import { useMarkdownResumeStore, defaultResume } from '@/stores/markdownResumeStore'
 
-interface Props {
-  personal: Resume['personal']
-}
-
-defineProps<Props>()
+const { resume } = useMarkdownResumeStore()
+const resolvedResume = computed(() => resume.value ?? defaultResume)
+const personal = computed(() => resolvedResume.value.personal)
 </script>
 
 <template>

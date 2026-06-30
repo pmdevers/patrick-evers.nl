@@ -13,12 +13,7 @@ const routes: RouteRecordRaw[] = [
     path: '/print',
     name: 'print',
     component: PrintView,
-  },
-  {
-    path: '/print-us',
-    name: 'print-us',
-    component: PrintUsView,
-  },
+  }
 ]
 
 const router = createRouter({

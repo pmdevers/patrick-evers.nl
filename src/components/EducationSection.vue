@@ -1,13 +1,12 @@
 <script setup lang="ts">
-import type { Education, Certificate, Membership } from '@/data/resume'
+import { computed } from 'vue'
+import { useMarkdownResumeStore, defaultResume } from '@/stores/markdownResumeStore'
 
-interface Props {
-  education: Education[]
-  certificates: Certificate[]
-  memberships?: Membership[]
-}
-
-defineProps<Props>()
+const { resume } = useMarkdownResumeStore()
+const resolvedResume = computed(() => resume.value ?? defaultResume)
+const education = computed(() => resolvedResume.value.education)
+const certificates = computed(() => resolvedResume.value.certificates)
+const memberships = computed(() => resolvedResume.value.memberships)
 </script>
 
 <template>
