@@ -1,3 +1,15 @@
+<script setup lang="ts">
+import type { Education, Certificate, Membership } from '@/data/resume'
+
+interface Props {
+  education: Education[]
+  certificates: Certificate[]
+  memberships?: Membership[]
+}
+
+defineProps<Props>()
+</script>
+
 <template>
   <section id="education" class="cv-section py-24 border-y border-white/5 bg-deepblue-900/20">
     <div class="container mx-auto px-6">
@@ -6,74 +18,36 @@
           <div class="text-center mb-10">
             <h2 class="text-4xl font-bold text-white mb-4">Education</h2>
           </div>
-
           <div class="space-y-6">
-            <article class="bg-deepblue-900/50 border border-white/5 rounded-2xl p-6 avoid-break">
+            <article v-for="edu in education" :key="edu.id" class="bg-deepblue-900/50 border border-white/5 rounded-2xl p-6 avoid-break">
               <header class="mb-3">
-                <h3 class="text-xl font-bold text-white">MBO Systeembeheer</h3>
-                <p class="text-blue-300 font-semibold">ROC WesterSchelde</p>
+                <h3 class="text-xl font-bold text-white">{{ edu.degree }}</h3>
+                <p class="text-blue-300 font-semibold">{{ edu.school }}</p>
               </header>
-              <p class="text-slate-400 text-sm">
-                Terneuzen, Netherlands | Graduation: Aug 2001
-              </p>
-            </article>
-
-            <article class="bg-deepblue-900/50 border border-white/5 rounded-2xl p-6 avoid-break">
-              <header class="mb-3">
-                <h3 class="text-xl font-bold text-white">MBO Administratief Medewerker</h3>
-                <p class="text-blue-300 font-semibold">ROC WesterSchelde</p>
-              </header>
-              <p class="text-slate-400 text-sm">
-                Terneuzen, Netherlands | Graduation: Aug 1998
-              </p>
+              <p class="text-slate-400 text-sm">{{ edu.field }} | {{ edu.year }}</p>
+              <p v-if="edu.details" class="text-slate-500 text-sm mt-2">{{ edu.details }}</p>
             </article>
           </div>
         </div>
 
-        <div>
+        <div v-if="certificates.length || memberships?.length">
           <div class="text-center mb-10">
-            <h2 class="text-4xl font-bold text-white mb-4">Certificates</h2>
+            <h2 class="text-4xl font-bold text-white mb-4">Certifications &amp; Memberships</h2>
           </div>
-
           <div class="space-y-6">
-            <article class="bg-deepblue-900/50 border border-white/5 rounded-2xl p-6 avoid-break">
+            <article v-for="cert in certificates" :key="cert.id" class="bg-deepblue-900/50 border border-white/5 rounded-2xl p-6 avoid-break">
               <header class="mb-3">
-                <h3 class="text-xl font-bold text-white">Mastering Modern .NET Architecture &amp; Design Patterns</h3>
-                <p class="text-blue-300 font-semibold">U2U</p>
+                <h3 class="text-xl font-bold text-white">{{ cert.name }}</h3>
+                <p class="text-blue-300 font-semibold">{{ cert.issuer }}</p>
               </header>
-              <p class="text-slate-400 text-sm">Issued: Apr 2026</p>
+              <p class="text-slate-400 text-sm">Issued: {{ cert.issued }}</p>
             </article>
-
-            <article class="bg-deepblue-900/50 border border-white/5 rounded-2xl p-6 avoid-break">
+            <article v-for="m in memberships" :key="m.id" class="bg-deepblue-900/50 border border-white/5 rounded-2xl p-6 avoid-break">
               <header class="mb-3">
-                <h3 class="text-xl font-bold text-white">AZ-204: Developing Solutions for Microsoft Azure</h3>
-                <p class="text-blue-300 font-semibold">Microsoft</p>
+                <h3 class="text-xl font-bold text-white">{{ m.organization }} {{ m.type }}</h3>
+                <p class="text-blue-300 font-semibold">{{ m.organization }}</p>
               </header>
-              <p class="text-slate-400 text-sm">Issued: Apr 2021</p>
-            </article>
-
-            <article class="bg-deepblue-900/50 border border-white/5 rounded-2xl p-6 avoid-break">
-              <header class="mb-3">
-                <h3 class="text-xl font-bold text-white">Angular 2 Development</h3>
-                <p class="text-blue-300 font-semibold">SpiralTrain</p>
-              </header>
-              <p class="text-slate-400 text-sm">Issued: Jan 2018</p>
-            </article>
-
-            <article class="bg-deepblue-900/50 border border-white/5 rounded-2xl p-6 avoid-break">
-              <header class="mb-3">
-                <h3 class="text-xl font-bold text-white">University M101N: MongoDB for .NET Developers (Version 3.2) (Archived)</h3>
-                <p class="text-blue-300 font-semibold">MongoDB</p>
-              </header>
-              <p class="text-slate-400 text-sm">Issued: Apr 2015</p>
-            </article>
-
-            <article class="bg-deepblue-900/50 border border-white/5 rounded-2xl p-6 avoid-break">
-              <header class="mb-3">
-                <h3 class="text-xl font-bold text-white">University M102: MongoDB for DBAs (Version 3.2) (Archived)</h3>
-                <p class="text-blue-300 font-semibold">MongoDB</p>
-              </header>
-              <p class="text-slate-400 text-sm">Issued: Jun 2014</p>
+              <p class="text-slate-400 text-sm">Member since: {{ m.since }}</p>
             </article>
           </div>
         </div>

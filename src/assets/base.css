@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --page-bg: #08111a;
+  --surface: #162b38;
+  --surface-soft: #203a4c;
+  --text-main: #f0f4f7;
+  --text-muted: #9cb8cb;
+  --line: #375668;
+  --accent: #9cd5ff;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--text-main);
+  background:
+    radial-gradient(circle at 12% 4%, rgba(58, 171, 255, 0.22) 0%, rgba(58, 171, 255, 0) 48%),
+    radial-gradient(circle at 88% 10%, rgba(113, 193, 255, 0.14) 0%, rgba(113, 193, 255, 0) 50%),
+    var(--page-bg);
+  font-family: 'Manrope', 'Segoe UI', sans-serif;
+  line-height: 1.6;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Sora', 'Manrope', sans-serif;
+  letter-spacing: -0.02em;
+}
