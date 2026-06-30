@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory, type RouteRecordRaw } from 'vue-router'
 import PortfolioView from '../views/PortfolioView.vue'
 import PrintView from '../views/PrintView.vue'
+import CoverLetterView from '../views/CoverLetterView.vue'
 
 const routes: RouteRecordRaw[] = [
   {
@@ -12,6 +13,11 @@ const routes: RouteRecordRaw[] = [
     path: '/print',
     name: 'print',
     component: PrintView,
+  },
+  {
+    path: '/cover-letter',
+    name: 'cover-letter',
+    component: CoverLetterView,
   }
 ]
 

@@ -9,7 +9,7 @@ const route = useRoute()
 const isMobileMenuOpen = ref(false)
 const { resume } = useMarkdownResumeStore()
 const resolvedResume = computed(() => resume.value ?? defaultResume)
-const isPrintRoute = computed(() => route.path === '/print' )
+const isPrintRoute = computed(() => route.path === '/print' || route.path === '/cover-letter')
 
 const sections = computed(() => [
   { id: 'about', label: 'About' },

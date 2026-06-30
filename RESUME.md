@@ -25,7 +25,7 @@ Cloud Architecture, Platform Engineering, Kubernetes, GitOps, Distributed System
 Kubernetes, Talos Linux, FluxCD, Crossplane, Terraform, Bicep, Helm, Kustomize
 
 ### Languages & Frameworks
-C#, JavaScript, TypeScript, Go, Rust, C++, NuShell, Python, .NET 8/9/10, Entity Framework, TUnit, XUnit, NUnit, MartenDB
+C#, JavaScript, TypeScript, Go, Rust, C++, NuShell, Python, .NET 8/9/10, Entity Framework, TUnit, XUnit, NUnit, MartenDB, MassTransit, NServiceBus
 
 ### Messaging & Data
 Apache Kafka, RabbitMQ, PostgreSQL, SQL Server, MongoDB, Redis, Elasticsearch, Oracle

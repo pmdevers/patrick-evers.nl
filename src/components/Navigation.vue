@@ -45,8 +45,8 @@ onUnmounted(() => {
   >
     <div class="container mx-auto flex justify-between items-center">
       <div class="text-xl font-bold text-white tracking-tighter">
-        <span class="text-blue-400">{{ props.personal.name.split(' ')[0] }}</span>
-        {{ props.personal.name.split(' ').slice(1).join(' ') }}
+        <a href="/"><span class="text-blue-400">{{ props.personal.name.split(' ')[0] }}</span>
+        {{ props.personal.name.split(' ').slice(1).join(' ') }}</a>
       </div>
 
       <div class="hidden md:flex items-center space-x-8 text-sm font-medium text-blue-100/80 uppercase tracking-widest">
