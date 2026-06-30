@@ -5,6 +5,30 @@ import atsResumeMarkdown from '../../ATS_RESUME.md?raw'
 const markdown = ref(atsResumeMarkdown)
 const parseError = ref<string | null>(null)
 
+export const defaultResume: Resume = {
+  personal: {
+    name: '',
+    title: '',
+    tagline: '',
+    location: '',
+    phone: '',
+    email: '',
+    linkedin: '',
+    github: '',
+    website: '',
+    about: [],
+    focusLabel: '',
+    quote: '',
+    summary: '',
+  },
+  skills: [],
+  certificates: [],
+  experience: [],
+  education: [],
+  projects: [],
+  memberships: [],
+};
+
 const toId = (prefix: string, value: string, index: number): string => {
   const slug = value
     .toLowerCase()

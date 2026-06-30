@@ -1,15 +1,14 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue'
 import { useRouter, useRoute } from 'vue-router'
-import { resumeData } from '@/data/resume'
-import { useMarkdownResumeStore } from '@/stores/markdownResumeStore'
+import { useMarkdownResumeStore, defaultResume } from '@/stores/markdownResumeStore'
 import Navigation from '@/components/Navigation.vue'
 
 const router = useRouter()
 const route = useRoute()
 const isMobileMenuOpen = ref(false)
 const { resume } = useMarkdownResumeStore()
-const resolvedResume = computed(() => resume.value ?? resumeData)
+const resolvedResume = computed(() => resume.value ?? defaultResume)
 const isPrintRoute = computed(() => route.path === '/print' || route.path === '/print-us')
 
 const sections = computed(() => [

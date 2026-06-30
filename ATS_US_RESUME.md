@@ -101,3 +101,7 @@ ROC WesterSchelde | Terneuzen, Netherlands | 2001
 - Introduction to Kubernetes (LFS158), The Linux Foundation (2026)
 - Mastering Modern .NET Architecture & Design Patterns, U2U (2026)
 - Angular 2 Development, SpiralTrain (2018)
+
+## Memberships
+
+- IEEE, Member (2020)

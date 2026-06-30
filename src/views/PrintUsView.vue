@@ -1,30 +1,10 @@
 <script setup lang="ts">
 import { computed } from 'vue'
+import { defaultResume } from '@/stores/markdownResumeStore'
 import { useUsMarkdownResumeStore } from '@/stores/usMarkdownResumeStore'
 
 const { resume } = useUsMarkdownResumeStore()
-const resolvedResume = computed(() => resume.value ?? {
-  personal: {
-    name: '',
-    title: '',
-    tagline: '',
-    summary: '',
-    location: '',
-    phone: '',
-    email: '',
-    linkedin: '',
-    github: '',
-    website: '',
-    about: [],
-    focusLabel: '',
-    quote: '',
-  },
-  skills: [],
-  certificates: [],
-  experience: [],
-  education: [],
-  projects: [],
-})
+const resolvedResume = computed(() => resume.value ?? defaultResume)
 </script>
 
 <template>

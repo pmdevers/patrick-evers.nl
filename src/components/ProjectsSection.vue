@@ -1,15 +1,14 @@
 <script setup lang="ts">
 import type { Project } from '@/data/resume'
-import { resumeData } from '@/data/resume'
+import projectImage from '@/assets/project.png'
 
 interface Props {
-  projects: Project[]
+  projects: Project[],
+  github: string
 }
 
 defineProps<Props>()
 
-const projectImage = 'https://www.patrick-evers.nl/assets/project-BIOOU2lB.png'
-const exploreLink = resumeData.personal.github
 </script>
 
 <template>
@@ -20,7 +19,7 @@ const exploreLink = resumeData.personal.github
           <h2 class="text-4xl font-bold text-white mb-4">Home Lab Projects</h2>
           <p class="text-slate-400 max-w-xl">A selection of systems I've architected, focusing on performance and reliability.</p>
         </div>
-        <a :href="exploreLink" class="text-blue-400 font-bold hover:text-white transition-colors uppercase tracking-widest text-sm border-b border-blue-400/30 pb-1">Explore All Repo's →</a>
+        <a :href="github" class="text-blue-400 font-bold hover:text-white transition-colors uppercase tracking-widest text-sm border-b border-blue-400/30 pb-1">Explore All Repo's →</a>
       </div>
 
       <div class="grid md:grid-cols-3 gap-8">

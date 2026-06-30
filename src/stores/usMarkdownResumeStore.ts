@@ -1,5 +1,5 @@
 import { computed, ref } from 'vue'
-import type { Certificate, Education, Experience, Project, Resume, Skill } from '@/data/resume'
+import type { Certificate, Education, Experience, Membership, Project, Resume, Skill } from '@/data/resume'
 import atsUsResumeMarkdown from '../../ATS_US_RESUME.md?raw'
 
 const markdown = ref(atsUsResumeMarkdown)
@@ -229,6 +229,34 @@ const parseProjects = (source: string): Project[] => {
     })
 }
 
+const parseMemberships = (source: string): Membership[] => {
+  const section = sectionBetween(source, 'Memberships')
+  if (!section) {
+    return []
+  }
+
+  return section
+    .split(/\r?\n/)
+    .map((line) => line.trim())
+    .filter((line) => line.startsWith('- '))
+    .map((line, index) => {
+      const value = line.replace(/^-\s+/, '')
+      const yearMatch = value.match(/\(([^)]+)\)\s*$/)
+      const since = yearMatch ? yearMatch[1].trim() : undefined
+      const withoutYear = yearMatch ? value.slice(0, yearMatch.index).trim() : value
+      const parts = withoutYear.split(',').map((part) => part.trim())
+      const organization = parts[0] || ''
+      const type = parts.slice(1).join(', ') || 'Member'
+
+      return {
+        id: toId('mem', organization, index),
+        organization,
+        type,
+        since,
+      }
+    })
+}
+
 const parseResumeMarkdown = (source: string): Resume => ({
   personal: parsePersonal(source),
   experience: parseExperience(source),
@@ -236,6 +264,7 @@ const parseResumeMarkdown = (source: string): Resume => ({
   certificates: parseCertificates(source),
   skills: parseSkills(source),
   projects: parseProjects(source),
+  memberships: parseMemberships(source),
 })
 
 const parsedResume = computed<Resume | null>(() => {

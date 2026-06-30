@@ -1,31 +1,9 @@
 <script setup lang="ts">
 import { computed } from 'vue'
-import { useMarkdownResumeStore } from '@/stores/markdownResumeStore'
+import { useMarkdownResumeStore, defaultResume } from '@/stores/markdownResumeStore'
 
 const { resume } = useMarkdownResumeStore()
-const resolvedResume = computed(() => resume.value ?? {
-  personal: {
-    name: '',
-    title: '',
-    tagline: '',
-    location: '',
-    phone: '',
-    email: '',
-    linkedin: '',
-    github: '',
-    website: '',
-    about: [],
-    focusLabel: '',
-    quote: '',
-    summary: '',
-  },
-  skills: [],
-  certificates: [],
-  experience: [],
-  education: [],
-  projects: [],
-  memberships: [],
-})
+const resolvedResume = computed(() => resume.value ?? defaultResume)
 </script>
 
 <template>
@@ -75,12 +53,10 @@ const resolvedResume = computed(() => resume.value ?? {
       </h2>
       <div class="space-y-2 text-sm">
         <div v-for="cert in resolvedResume.certificates" :key="cert.id">
-          <p class="font-bold">{{ cert.name }}</p>
-          <p class="text-gray-700">{{ cert.issuer }} • {{ cert.issued }}</p>
+          <p class="font-bold">{{ cert.name }} - <span class="text-gray-700">{{ cert.issuer }} • {{ cert.issued }}</span></p>
         </div>
         <div v-for="m in resolvedResume.memberships" :key="m.id">
-          <p class="font-bold">{{ m.organization }} {{ m.type }}</p>
-          <p class="text-gray-700">{{ m.organization }} • Member since {{ m.since }}</p>
+          <p class="font-bold">{{ m.organization }} {{ m.type }} - <span class="text-gray-700">{{ m.organization }} • Member since {{ m.since }}</span></p>
         </div>
       </div>
     </div>
