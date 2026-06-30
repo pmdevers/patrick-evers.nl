@@ -42,7 +42,7 @@ Cloud-Native Platform Engineering
 
 ## Professional Experience
 
-### Software Engineer & Cloud-Native Platform Specialist
+### Principal Software Engineer & Cloud-Native Platform Specialist
 TJIP BV | Delft, Netherlands | Sep 2017 - Present
 - Modernized a 75-microservice platform on Azure Kubernetes, increasing infrastructure scalability by 40%.
 - Implemented GitOps with FluxCD, improving deployment governance and reducing production incidents by 25%.
